@@ -13,6 +13,7 @@ app.use(express.json());
 const authRoutes = require('./routes/authRoute.js');
 app.use('/api/auth', authRoutes);
 
+
 // Test DB connection and start server
 sequelize.authenticate()
   .then(() => {
