@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { register } from "../services/authServices";
+import { toast } from "react-toastify";
+
 
 const RegisterForm = () => {
   const navigate = useNavigate();
@@ -10,6 +12,18 @@ const RegisterForm = () => {
     email: "",
     password: "",
   });
+  
+   
+  const [errors, setErrors] = useState({
+  emri: "",
+  email: "",
+  password: "",
+});
+
+ const newErrors = { emri: "", email: "", password: "" };
+  let hasError = false;
+
+
 
  const handleChange = (e) => {
     setFormData({
@@ -20,13 +34,39 @@ const RegisterForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    
+    if(!formData.emri || !formData.email || !formData.password){
+        newErrors.emri = "All fields are required.";
+    hasError = true;
+    }
+
+    if(formData.password.length <6){
+       
+
+        newErrors.password = "Password must be at least 6 characters long.";
+    hasError = true;
+    }
+
+    const emailDomain="ubt-uni.net";
+    if(!formData.email.endsWith(emailDomain)){
+
+         newErrors.email = "Only UBT emails (ending with @ubt-uni.net) are allowed.";
+    hasError = true;
+        
+    }
+
+     if (hasError) {
+    setErrors(newErrors);
+    return;
+  }
+
     try {
       const data = await register(formData);
       localStorage.setItem("token", data.token);
-      alert("Registration successful");
+      toast.success("Registration successful!");
       navigate("/login")
     } catch (err) {
-      alert("Registration failed: " + (err.response?.data?.message || "Unknown error"));
+      toast.error("Registration failed!");
       console.error("Registration error:",err)
     }
   };
@@ -45,6 +85,7 @@ const RegisterForm = () => {
         required
         className="w-full p-2 border rounded"
       />
+    {errors.emri && <p className="text-red-600 text-sm">{errors.emri}</p>}
 
       <input
         type="email"
@@ -55,6 +96,7 @@ const RegisterForm = () => {
         required
         className="w-full p-2 border rounded"
       />
+    {errors.email && <p className="text-red-600 text-sm">{errors.email}</p>}
 
       <input
         type="password"
@@ -65,6 +107,7 @@ const RegisterForm = () => {
         required
         className="w-full p-2 border rounded"
       />
+      {errors.password && <p className="text-red-600 text-sm">{errors.password}</p>}
 
       <button
         type="submit"
