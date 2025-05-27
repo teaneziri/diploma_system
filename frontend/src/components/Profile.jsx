@@ -1,10 +1,9 @@
 const Profile = () => {
   return (
-    <div className="text-gray-800">
-      <h3 className="text-2xl font-bold mb-4 ">Profili Im</h3>
-      <p><strong>Emri:</strong> Arber Berisha</p>
-      <p><strong>Email:</strong> arber.berisha@ubt-uni.net</p>
-      <p><strong>Programi i Studimit:</strong> Informatikë</p>
+   <div className="border border-gray-300 p-6 max-w-md rounded shadow-md bg-white">
+      <h2 className="text-xl font-semibold mb-4">Personal Information</h2>
+      <p className="mb-2"><span className="font-bold">Name:</span> </p>
+      <p><span className="font-bold">Email:</span> </p>
     </div>
   );
 };

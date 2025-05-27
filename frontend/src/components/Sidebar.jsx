@@ -1,21 +1,18 @@
 import { NavLink } from "react-router-dom";
-import LogoImg from "../assets/download.png"
+import LogoImg from "../assets/ubt-logo.png";
+
+import { FaUser, FaBook, FaCheckCircle, FaFileAlt, FaCalendarAlt } from "react-icons/fa";
 
 const Sidebar = () => {
   return (
     <aside className="w-64 h-screen bg-blue-800 text-white flex flex-col p-6">
       <div className="mb-10">
-        <img
-      src={LogoImg}
-      alt="Logo"
-      className="w-10 h-10 object-contain"
-    />
-        
+        <img src={LogoImg} alt="Logo" className="w-16 h-16 object-contain" />
       </div>
 
       <nav className="flex flex-col space-y-4">
         <div>
-          <h3 className="uppercase text-blue-300 text-xs font-semibold mb-2">
+          <h3 className="uppercase text-blue-300 text-s font-semibold mb-2">
             Llogaria Ime
           </h3>
           <ul className="space-y-2 ml-2">
@@ -23,34 +20,37 @@ const Sidebar = () => {
               <NavLink
                 to="/dashboard/profile"
                 className={({ isActive }) =>
-                  isActive ? "text-white font-semibold" : "text-blue-200 hover:text-white"
+                  isActive ? "text-white font-semibold flex items-center space-x-2" : "text-blue-200 hover:text-white flex items-center space-x-2"
                 }
               >
-                Profili Im
+                <FaUser />
+                <span>Profili Im</span>
               </NavLink>
             </li>
             <li>
               <NavLink
                 to="/dashboard/tema-e-paraqitur"
                 className={({ isActive }) =>
-                  isActive ? "text-white font-semibold" : " hover:text-white"
+                  isActive ? "text-white font-semibold flex items-center space-x-2" : "text-blue-200 hover:text-white flex items-center space-x-2"
                 }
               >
-                Tema e Paraqitur
+                <FaBook />
+                <span>Tema e Paraqitur</span>
               </NavLink>
             </li>
             <li>
               <NavLink
                 to="/dashboard/ckqyqu"
                 className={({ isActive }) =>
-                  isActive ? "text-white font-semibold" : "text-blue-200 hover:text-white"
+                  isActive ? "text-white font-semibold flex items-center space-x-2" : "text-blue-200 hover:text-white flex items-center space-x-2"
                 }
               >
-                Çkqyqu
+                <FaCheckCircle />
+                <span>Çkyqu</span>
               </NavLink>
             </li>
             <li>
-              <div className="font-semibold text-blue-300 uppercase text-xs mb-1 mt-4">
+              <div className="font-semibold text-blue-300 uppercase text-s mb-1 mt-4">
                 Tema e Diplomës
               </div>
               <ul className="ml-4 space-y-1">
@@ -58,20 +58,22 @@ const Sidebar = () => {
                   <NavLink
                     to="/dashboard/tema-e-diplomes"
                     className={({ isActive }) =>
-                      isActive ? "text-white font-semibold" : "text-blue-200 hover:text-white"
+                      isActive ? "text-white font-semibold flex items-center space-x-2" : "text-blue-200 hover:text-white flex items-center space-x-2"
                     }
                   >
-                    Tema e Diplomës
+                    <FaFileAlt />
+                    <span>Tema e Diplomës</span>
                   </NavLink>
                 </li>
                 <li>
                   <NavLink
                     to="/dashboard/termini-im"
                     className={({ isActive }) =>
-                      isActive ? "text-white font-semibold" : "text-blue-200 hover:text-white"
+                      isActive ? "text-white font-semibold flex items-center space-x-2" : "text-blue-200 hover:text-white flex items-center space-x-2"
                     }
                   >
-                    Termini Im
+                    <FaCalendarAlt />
+                    <span>Termini Im</span>
                   </NavLink>
                 </li>
               </ul>
