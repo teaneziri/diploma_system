@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import RegisterForm from "./components/RegisterForm";
 import LoginForm from "./components/LoginForm";
 import Dashboard from "./components/Dashboard"; // krijo këtë komponent ose zëvendëso me tënden
+import StudentDashboard from "./components/StudentDashboard"
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import './index.css'; // duhet patjetër që Tailwind të funksionojë
@@ -45,6 +46,11 @@ function App() {
             )
           }
         />
+
+        <Route
+  path="/student-dashboard/*"
+  element={<StudentDashboard setIsAuthenticated={setIsAuthenticated} />}
+/>
       </Routes>
 
       <ToastContainer
