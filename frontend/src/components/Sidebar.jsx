@@ -35,7 +35,7 @@ const Sidebar = () => {
                 }
               >
                 <FaBook />
-                <span>Tema e Paraqitur</span>
+                <span>Paraqitja e Temes</span>
               </NavLink>
             </li>
             <li>
