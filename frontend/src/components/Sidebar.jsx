@@ -1,11 +1,16 @@
 import { NavLink } from "react-router-dom";
+import LogoImg from "../assets/download.png"
 
 const Sidebar = () => {
   return (
     <aside className="w-64 h-screen bg-blue-800 text-white flex flex-col p-6">
       <div className="mb-10">
-        <h1 className="text-2xl font-bold mb-2">Student Dashboard</h1>
-        <p className="text-blue-300 text-sm">Arber Berisha</p>
+        <img
+      src={LogoImg}
+      alt="Logo"
+      className="w-10 h-10 object-contain"
+    />
+        
       </div>
 
       <nav className="flex flex-col space-y-4">
