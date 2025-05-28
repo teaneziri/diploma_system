@@ -9,6 +9,7 @@ import TerminiIm from "./TerminiIm";
 import MenaxhoPerdoruesit from "./Admin/MenaxhoPerdoruesit";
 import MenaxhoStudentet from "./Professor/MenaxhoStudentet";
 import TematNgaStudentet from "./Professor/TematNgaStudentet";
+import TematEProfesorit from "./Professor/TematEProfesorit.jsx";
 
 const Dashboard = ({ setIsAuthenticated, role }) => {
   const userName = "Arber Berisha"; // mund ta marrësh nga API ose kontekst
@@ -42,6 +43,7 @@ const Dashboard = ({ setIsAuthenticated, role }) => {
               <>
                 <Route path="menaxho-studentet" element={<MenaxhoStudentet />} />
                 <Route path="temat-nga-studentet" element={<TematNgaStudentet />} />
+                <Route path="temat-e-mija" element={<TematEProfesorit/>}/>
                 {/* Shto rrugë të tjera për profesorin */}
               </>
             )}

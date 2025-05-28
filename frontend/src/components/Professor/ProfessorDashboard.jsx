@@ -2,7 +2,7 @@ import { Routes, Route, Navigate, useNavigate } from "react-router-dom";
 
 import MenaxhoStudentet from "./MenaxhoStudentet"
 
-import TematNgaStudentet from "./TematNgaStudentet";  // Komponent për temat që sjellin studentët
+import TematNgaStudentet from "./TematNgaStudentet";  
 import Sidebar from "../Sidebar";
 import Header from "../Header";
 import Profile from "../Profile";

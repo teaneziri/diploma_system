@@ -90,17 +90,7 @@ const Sidebar = ({ role }) => {
               Profesori
             </h3>
             <ul className="space-y-2 ml-2">
-              <li>
-                <NavLink
-                  to="/dashboard/professor/menaxho-studentet"
-                  className={({ isActive }) =>
-                    isActive ? "text-white font-semibold flex items-center space-x-2" : "text-blue-200 hover:text-white flex items-center space-x-2"
-                  }
-                >
-                  <FaUsers />
-                  <span>Menaxho Studentët</span>
-                </NavLink>
-              </li>
+              
               <li>
                 <NavLink
                   to="/dashboard/professor/temat-nga-studentet"
@@ -112,7 +102,29 @@ const Sidebar = ({ role }) => {
                   <span>Temat nga Studentët</span>
                 </NavLink>
               </li>
-              {/* linke te tjera profesori */}
+               
+              <li>
+                <NavLink
+                  to="/dashboard/professor/menaxho-studentet"
+                  className={({ isActive }) =>
+                    isActive ? "text-white font-semibold flex items-center space-x-2" : "text-blue-200 hover:text-white flex items-center space-x-2"
+                  }
+                >
+                  <FaUsers />
+                  <span>Temat e Aprovuara</span>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/dashboard/professor/temat-e-mija"
+                  className={({ isActive }) =>
+                    isActive ? "text-white font-semibold flex items-center space-x-2" : "text-blue-200 hover:text-white flex items-center space-x-2"
+                  }
+                >
+                  <FaClipboardList />
+                  <span>Temat e mija</span>
+                </NavLink>
+              </li>
             </ul>
           </div>
         )}
