@@ -11,7 +11,7 @@ const TemaDiplomes = () => {
                 <th className="border border-gray-300 px-4 py-2">Emri dhe mbiemri</th>
                 <th className="border border-gray-300 px-4 py-2">Email</th>
                 <th className="border border-gray-300 px-4 py-2">Departamenti</th>
-                <th className="border border-gray-300 px-4 py-2">Specializimi</th>
+                
                 <th className="border border-gray-300 px-4 py-2">Tema e diplomës</th>
                 <th className="border border-gray-300 px-4 py-2">Mentori</th>
                 <th className="border border-gray-300 px-4 py-2">Statusi</th>
@@ -23,7 +23,7 @@ const TemaDiplomes = () => {
                 <td className="border border-gray-300 px-4 py-2">Filan Fisteku</td>
                 <td className="border border-gray-300 px-4 py-2">ff1111@ubt-uni.net</td>
                 <td className="border border-gray-300 px-4 py-2">Shkenca Kompjuterike dhe Inxhinieri</td>
-                <td className="border border-gray-300 px-4 py-2">Inteligjencë artificiale</td>
+                
                 <td className="border border-gray-300 px-4 py-2">xxxxxxxxxxxxxxxxx</td>
                 <td className="border border-gray-300 px-4 py-2">Emri i prof</td>
                 <td className="border border-gray-300 px-4 py-2 text-green-600 font-semibold">Approved</td>

@@ -5,7 +5,7 @@ import { FaUser, FaBook, FaCheckCircle, FaFileAlt, FaCalendarAlt } from "react-i
 
 const Sidebar = () => {
   return (
-    <aside className="w-64 h-screen bg-[rgba(36,64,130,1)] text-white flex flex-col p-6">
+    <aside className="w-72 h-screen bg-[rgba(36,64,130,1)] text-white flex flex-col p-6">
       <div className="mb-10">
         <img src={LogoImg} alt="Logo" className="w-16 h-16 object-contain" />
       </div>
@@ -73,7 +73,7 @@ const Sidebar = () => {
                     }
                   >
                     <FaCalendarAlt />
-                    <span>Termini Im</span>
+                    <span>Temat e disponueshme</span>
                   </NavLink>
                 </li>
               </ul>
