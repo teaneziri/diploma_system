@@ -1,4 +1,4 @@
-const TemaParaqitur = () => {
+const TemaEParaqitur = () => {
   return (
     <div>
       <main className="flex-1 p-8">
@@ -87,4 +87,4 @@ const TemaParaqitur = () => {
   );
 };
 
-export default TemaParaqitur;
+export default TemaEParaqitur;

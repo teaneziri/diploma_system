@@ -1,9 +1,10 @@
 import { NavLink } from "react-router-dom";
 import LogoImg from "../assets/ubt-logo.png";
 
-import { FaUser, FaBook, FaCheckCircle, FaFileAlt, FaCalendarAlt } from "react-icons/fa";
 
-const Sidebar = () => {
+import { FaUser, FaBook, FaCheckCircle, FaFileAlt, FaCalendarAlt, FaUsers, FaClipboardList } from "react-icons/fa";
+
+const Sidebar = ({ role }) => {
   return (
     <aside className="w-72 h-screen bg-[rgba(36,64,130,1)] text-white flex flex-col p-6">
       <div className="mb-10">
@@ -11,14 +12,15 @@ const Sidebar = () => {
       </div>
 
       <nav className="flex flex-col space-y-4">
-        <div>
+        {role === "student" && (
+          <div>
           <h3 className="uppercase text-blue-300 text-s font-semibold mb-2">
             Llogaria Ime
           </h3>
           <ul className="space-y-2 ml-2">
             <li>
               <NavLink
-                to="/dashboard/profile"
+                to="/dashboard/student/profile"
                 className={({ isActive }) =>
                   isActive ? "text-white font-semibold flex items-center space-x-2" : "text-blue-200 hover:text-white flex items-center space-x-2"
                 }
@@ -29,7 +31,7 @@ const Sidebar = () => {
             </li>
             <li>
               <NavLink
-                to="/dashboard/tema-e-paraqitur"
+                to="/dashboard/student/tema-e-paraqitur"
                 className={({ isActive }) =>
                   isActive ? "text-white font-semibold flex items-center space-x-2" : "text-blue-200 hover:text-white flex items-center space-x-2"
                 }
@@ -40,7 +42,7 @@ const Sidebar = () => {
             </li>
             <li>
               <NavLink
-                to="/dashboard/ckqyqu"
+                to="/dashboard/student/ckqyqu"
                 className={({ isActive }) =>
                   isActive ? "text-white font-semibold flex items-center space-x-2" : "text-blue-200 hover:text-white flex items-center space-x-2"
                 }
@@ -56,7 +58,7 @@ const Sidebar = () => {
               <ul className="ml-4 space-y-1">
                 <li>
                   <NavLink
-                    to="/dashboard/tema-e-diplomes"
+                    to="/dashboard/student/tema-e-diplomes"
                     className={({ isActive }) =>
                       isActive ? "text-white font-semibold flex items-center space-x-2" : "text-blue-200 hover:text-white flex items-center space-x-2"
                     }
@@ -67,7 +69,7 @@ const Sidebar = () => {
                 </li>
                 <li>
                   <NavLink
-                    to="/dashboard/termini-im"
+                    to="/dashboard/student/termini-im"
                     className={({ isActive }) =>
                       isActive ? "text-white font-semibold flex items-center space-x-2" : "text-blue-200 hover:text-white flex items-center space-x-2"
                     }
@@ -80,6 +82,62 @@ const Sidebar = () => {
             </li>
           </ul>
         </div>
+        )}
+
+        {role === "professor" && (
+          <div>
+            <h3 className="uppercase text-blue-300 text-s font-semibold mb-2">
+              Profesori
+            </h3>
+            <ul className="space-y-2 ml-2">
+              <li>
+                <NavLink
+                  to="/dashboard/professor/menaxho-studentet"
+                  className={({ isActive }) =>
+                    isActive ? "text-white font-semibold flex items-center space-x-2" : "text-blue-200 hover:text-white flex items-center space-x-2"
+                  }
+                >
+                  <FaUsers />
+                  <span>Menaxho Studentët</span>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/dashboard/professor/temat-nga-studentet"
+                  className={({ isActive }) =>
+                    isActive ? "text-white font-semibold flex items-center space-x-2" : "text-blue-200 hover:text-white flex items-center space-x-2"
+                  }
+                >
+                  <FaClipboardList />
+                  <span>Temat nga Studentët</span>
+                </NavLink>
+              </li>
+              {/* linke te tjera profesori */}
+            </ul>
+          </div>
+        )}
+
+        {role === "admin" && (
+          <div>
+            <h3 className="uppercase text-blue-300 text-s font-semibold mb-2">
+              Admin
+            </h3>
+            <ul className="space-y-2 ml-2">
+              <li>
+                <NavLink
+                  to="/dashboard/admin/menaxho-perdoruesit"
+                  className={({ isActive }) =>
+                    isActive ? "text-white font-semibold flex items-center space-x-2" : "text-blue-200 hover:text-white flex items-center space-x-2"
+                  }
+                >
+                  <FaUsers />
+                  <span>Menaxho Përdoruesit</span>
+                </NavLink>
+              </li>
+              {/* opsione tjera admin */}
+            </ul>
+          </div>
+        )}
       </nav>
     </aside>
   );

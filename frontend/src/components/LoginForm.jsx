@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { login } from "../services/authServices";
 import { toast } from "react-toastify";
 
-const LoginForm = ({ onLogin }) => {  // merr onLogin nga props për të njoftuar App
+const LoginForm = ({ onLogin }) => {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -15,7 +15,7 @@ const LoginForm = ({ onLogin }) => {  // merr onLogin nga props për të njoftua
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-    setError(""); // heq errorin kur ndryshon input
+    setError("");
   };
 
   const handleSubmit = async (e) => {
@@ -31,7 +31,7 @@ const LoginForm = ({ onLogin }) => {  // merr onLogin nga props për të njoftua
       localStorage.setItem("token", data.token);
       toast.success("Login successful!");
       setError("");
-      if (onLogin) onLogin(); // thërret callback për të përditësuar gjendjen e login në App
+      if (onLogin) onLogin();
       navigate("/dashboard");
     } catch (err) {
       console.error("Login error:", err);
