@@ -29,9 +29,16 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 const cors = require('cors');
+const diplomaTopicRoutes = require("./routes/temaDiplomesRoute.js")
+
+
+
 
 app.use(cors());
 app.use(express.json());
+
+app.use('/api/tema-diplomes', diplomaTopicRoutes);
+
 
 const authRoutes = require('./routes/authRoute.js');
 
